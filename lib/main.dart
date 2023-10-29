@@ -1,4 +1,4 @@
-import 'package:apod_flutter/today_apod.dart';
+import 'package:apod_flutter/screens/today_apod/today_apod_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,7 +18,7 @@ class MainApp extends StatelessWidget {
           background: Color(0xff0d0f1e),
         )),
       home: const Scaffold(
-        body: TodayApod(),
+        body: TodayApodPage(),
       ),
     );
   }
