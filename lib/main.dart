@@ -11,11 +11,14 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Today's Picture"),
-        ),
-        body: const Center(child: TodayApod()),
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: const ColorScheme.dark(
+          primary: Colors.white,
+          background: Color(0xff0d0f1e),
+        )),
+      home: const Scaffold(
+        body: TodayApod(),
       ),
     );
   }
