@@ -25,4 +25,7 @@ class APOD {
       media_type: json['media_type'],
     );
   }
+
+  static const MEDIA_TYPE_IMAGE = "image";
+  static const MEDIA_TYPE_VIDEO = "video";
 }
