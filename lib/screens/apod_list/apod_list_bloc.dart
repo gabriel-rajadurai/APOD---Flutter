@@ -6,16 +6,15 @@ import 'package:apod_flutter/bloc/bloc.dart';
 
 class ApodListBloc implements Bloc {
   final ApodRepo _apodRepo = ApodRepo();
-  final _apodStreamController = StreamController<bool>();
   late Stream<List<APOD>?> apodStream;
 
   ApodListBloc() {
-     apodStream = _apodStreamController.stream.asyncMap((event) => _apodRepo.fetchAstronomyPictures());
-     _apodStreamController.sink.add(true);
+    _apodRepo.fetchAstronomyPictures();
+     apodStream = _apodRepo.getAllApods();
   }
 
   @override
   void dispose() {
-    _apodStreamController.close();
+    _apodRepo.close();
   }
 }

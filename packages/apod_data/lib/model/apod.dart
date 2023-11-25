@@ -26,6 +26,22 @@ class APOD {
     );
   }
 
+  Map<String, dynamic> toMap() {
+    return {
+      'date': date,
+      'title': title,
+      'url': url,
+      'explanation': explanation,
+      'hdurl': hdurl,
+      'media_type': media_type,
+    };
+  }
+
+  @override
+  String toString() {
+    return "APOD('date' : $date, 'title' : $title,   'url' : $url,'explanation' : $explanation,'hdurl' : $hdurl,'media_type' : $media_type,)";
+  }
+
   static const MEDIA_TYPE_IMAGE = "image";
   static const MEDIA_TYPE_VIDEO = "video";
 }
