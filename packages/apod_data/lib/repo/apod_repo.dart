@@ -1,10 +1,13 @@
 import 'package:apod_data/datasource/local/apod_local_ds.dart';
+import 'package:apod_data/datasource/local/impl/apod_local_ds_impl.dart';
+import 'package:apod_data/datasource/local/impl/apod_local_ds_web.dart';
 import 'package:apod_data/datasource/remote/apod_remote_ds.dart';
 import 'package:apod_data/model/apod.dart';
+import 'package:flutter/foundation.dart';
 import 'package:intl/intl.dart';
 
 class ApodRepo {
-  final ApodLocalDataSource _apodLocalDataSource = ApodLocalDataSource();
+  late final ApodLocalDataSource _apodLocalDataSource = getLocalDataSource();
   final ApodRemoteDataSource _apodRemoteDataSource = ApodRemoteDataSource();
 
   Future<APOD> fetchApodOfTheDay() async {
@@ -34,5 +37,13 @@ class ApodRepo {
 
   void close() {
     _apodLocalDataSource.close();
+  }
+
+  ApodLocalDataSource getLocalDataSource() {
+    if (kIsWeb) {
+      return ApodLocalDataSourceWeb();
+    } else {
+      return ApodLocalDataSourceImpl();
+    }
   }
 }

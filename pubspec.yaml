@@ -9,10 +9,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  intl: ^0.18.1
+  url_launcher: ^6.2.1
+  share_plus: ^7.2.1
+  file_saver: ^0.2.9
     
   #modules/packages
   apod_data:
     path: packages/apod_data
+  cached_network_image: ^3.3.0
 
 dev_dependencies:
   flutter_test:
