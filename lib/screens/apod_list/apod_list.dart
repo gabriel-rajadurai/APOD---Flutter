@@ -42,7 +42,7 @@ class _ApodListState extends State<ApodList> {
   }
 
   void openApod(APOD apod) async {
-    if (apod.media_type == APOD.MEDIA_TYPE_VIDEO) {
+    if (apod.mediaType == APOD.MEDIA_TYPE_VIDEO) {
       var url = Uri.parse(apod.url!);
       if (!await launchUrl(url)) {
         log("Failed to load url $url");

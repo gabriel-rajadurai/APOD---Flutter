@@ -18,7 +18,7 @@ class ApodDetails extends StatelessWidget {
             minHeight: 500
           ),
           child: Builder(builder: (context) {
-            if (apod.media_type == APOD.MEDIA_TYPE_IMAGE) {
+            if (apod.mediaType == APOD.MEDIA_TYPE_IMAGE) {
               return ApodImage(apodUrl: apod.hdurl!, fit: BoxFit.contain);
             } else {
               return Center(

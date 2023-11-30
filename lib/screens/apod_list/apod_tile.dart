@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:apod_data/model/apod.dart';
 import 'package:apod_flutter/screens/apod_list/apod_description.dart';
@@ -50,7 +49,7 @@ class _ApodListTileState extends State<ApodListTile>
               InkWell(
                 onTap: widget.openApod,
                 child: Builder(builder: (context) {
-                  if (widget.apod.media_type == APOD.MEDIA_TYPE_IMAGE) {
+                  if (widget.apod.mediaType == APOD.MEDIA_TYPE_IMAGE) {
                     return ApodImage(apodUrl: widget.apod.url!);
                   } else {
                     return Center(

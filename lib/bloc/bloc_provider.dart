@@ -7,10 +7,10 @@ class BlocProvider<T extends Bloc> extends StatefulWidget {
   final T bloc;
 
   const BlocProvider({
-    Key? key,
+    super.key,
     required this.bloc,
     required this.child,
-  }) : super(key: key);
+  });
 
   // 2
   static T of<T extends Bloc>(BuildContext context) {

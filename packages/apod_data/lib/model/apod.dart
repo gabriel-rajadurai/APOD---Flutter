@@ -4,7 +4,7 @@ class APOD {
   final String? url;
   final String? explanation;
   final String? hdurl;
-  final String? media_type;
+  final String? mediaType;
 
   APOD({
     required this.date,
@@ -12,7 +12,7 @@ class APOD {
     required this.url,
     required this.explanation,
     required this.hdurl,
-    required this.media_type,
+    required this.mediaType,
   });
 
   factory APOD.fromJson(Map<String, dynamic> json) {
@@ -22,7 +22,7 @@ class APOD {
       url: json['url'],
       explanation: json['explanation'],
       hdurl: json['hdurl'],
-      media_type: json['media_type'],
+      mediaType: json['media_type'],
     );
   }
 
@@ -33,13 +33,13 @@ class APOD {
       'url': url,
       'explanation': explanation,
       'hdurl': hdurl,
-      'media_type': media_type,
+      'media_type': mediaType,
     };
   }
 
   @override
   String toString() {
-    return "APOD('date' : $date, 'title' : $title,   'url' : $url,'explanation' : $explanation,'hdurl' : $hdurl,'media_type' : $media_type,)";
+    return "APOD('date' : $date, 'title' : $title,   'url' : $url,'explanation' : $explanation,'hdurl' : $hdurl,'media_type' : $mediaType,)";
   }
 
   static const MEDIA_TYPE_IMAGE = "image";
