@@ -33,8 +33,20 @@ class _TodayApodState extends State<TodayApod> {
                   : Expanded(
                       child: Stack(
                         children: [
-                          Positioned.fill(
-                              child: ApodImage(apodUrl: apod.hdurl!)),
+                          Builder(builder: (context) {
+                            if (apod.mediaType == APOD.MEDIA_TYPE_IMAGE) {
+                              return Positioned.fill(
+                                child: ApodImage(apodUrl: apod.hdurl!),
+                              );
+                            } else {
+                              return Center(
+                                child: IconButton(
+                                  onPressed: () {},
+                                  icon: const Icon(Icons.play_circle_outlined),
+                                ),
+                              );
+                            }
+                          }),
                           Center(
                             child: Container(
                               constraints: const BoxConstraints(maxWidth: 600),
